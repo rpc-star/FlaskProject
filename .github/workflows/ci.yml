@@ -1,0 +1,18 @@
+name: CI project2
+
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-lates
+
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      
+      - name: Build Docker image
+        uses: docker build -t myapp .
